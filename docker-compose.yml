@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  postgres_stock:
+    image: postgres
+    container_name: postgres_stock
+    environment:
+      - POSTGRES_DB=db_stock
+      - POSTGRES_USER=hydra_user
+      - POSTGRES_PASSWORD=h1dr4#password
+    ports:
+      - "5432:5432"
+    volumes:
+      - stockdata:/var/lib/postgresql/data
+
+volumes:
+  stockdata: {}
